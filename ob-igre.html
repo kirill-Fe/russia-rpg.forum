@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russia RPG</title>
+    <link rel="stylesheet" href="ob-igre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #171a1d;
+    color: #ddd;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+  background-color: #262b31;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a.logo {
+   text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+  font-weight: bold;
+}
+nav ul {
+ list-style: none;
+   padding: 0;
+   margin: 0;
+}
+nav ul li {
+  display: inline-block;
+    margin-left: 20px;
+}
+nav ul li a{
+ text-decoration: none;
+  color: #ddd;
+}
+main {
+    padding: 20px 0;
+}
+section {
+   margin-bottom: 30px;
+}
+.game-section h2,
+.creator-section h2,
+.gallery-section h2 {
+   margin-bottom: 15px;
+  text-align: center;
+}
+.game-content{
+    display: flex;
+   justify-content: space-between;
+}
+.game-description {
+    max-width: 50%;
+}
+.game-description p{
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.game-trailer {
+ max-width: 45%;
+}
+.creator-content {
+  display: flex;
+   justify-content: center;
+    align-items: center;
+}
+.creator-image{
+ margin-right: 30px;
+}
+.creator-image img{
+ border-radius: 50%;
+ max-height: 150px;
+}
+.creator-info p{
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.creator-info a{
+  color: #4285f4;
+  text-decoration: none;
+}
+.gallery {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.gallery img {
+   width: 100%;
+    height: auto;
+  display: block;
+  border-radius: 8px;
+}
+footer {
+   background-color: #262b31;
+    color: #ddd;
+    text-align: center;
+    padding: 15px 0;
+  margin-top: 20px;
+}
+.social-links a{
+  color: #4285f4;
+    margin-left: 10px;
+   font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="C:\Users\Киря\OneDrive\Desktop\russia-rpg\glav.html" class="logo">Russia RPG</a>
+            <nav>
+                <ul>
+                    <li><a href="#game-section">Об игре</a></li>
+                    <li><a href="#creator-section">Создатель</a></li>
+                    <li><a href="#gallery-section">Галерея</a></li>
+                    <li><a href="glav.html">Вернутся на главную</a></li>
+               </ul>
+          </nav>
+       </div>
+    </header>
+
+    <main>
+      <div class="container">
+         <section class="game-section" id="game-section">
+             <h2>Об игре</h2>
+             <div class="game-content">
+                 <div class="game-description">
+                      <p>
+                        Russia RPG – это уникальная многопользовательская ролевая игра, которая перенесет вас в атмосферу суровой и захватывающей России. Создайте своего персонажа и отправьтесь в незабываемое приключение, полное опасностей и возможностей.
+                      </p>
+                       <p>
+                        В Russia RPG вас ждет огромный открытый мир, множество интересных заданий, сражения с другими игроками, торговля, а также масса возможностей для развития вашего персонажа. Присоединяйтесь к нашему сообществу и станьте частью незабываемой истории!
+                      </p>
+                   </div>
+                  <div class="game-trailer">
+                    <video width="560" height="315" controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает HTML5-видео.
+                   </video>
+                </div>
+             </div>
+        </section>
+         <section class="creator-section" id="creator-section">
+           <h2>Создатель игры</h2>
+              <div class="creator-content">
+                 <div class="creator-image">
+                    <img src="Kirill_Florik.jpg" alt="Создатель игры">
+                  </div>
+               <div class="creator-info">
+                   <p>
+                      <strong>Кирилл Флорик</strong> – талантливый разработчик и энтузиаст, который вложил свою душу и сердце в создание Russia RPG. Он мечтал создать игру, которая бы отражала уникальную атмосферу России, и ему это удалось.
+                     </p>
+                    <p>
+                        Кирилл – не просто разработчик, а настоящий геймер, который понимает, что нужно игрокам. Он всегда открыт для обратной связи и стремится сделать Russia RPG еще лучше.
+                    </p>
+                   <a href="https://t.me/Kirill_Florik" target="_blank"> <i class="fab fa-telegram"></i> Связаться в Telegram</a>
+               </div>
+            </div>
+          </section>
+         <section class="gallery-section" id="gallery-section">
+            <h2>Галерея</h2>
+                <div class="gallery">
+                  <img src="new-spawn-acar.jpg" alt="Скриншот 1">
+                     <img src="dla-admin.jpg" alt="Скриншот 2">
+                     <img src="spawn.jpg" alt="Скриншот 3">
+                     <img src="aveh.jpg" alt="Скриншот 4">
+              </div>
+          </section>
+       </div>
+    </main>
+
+    <footer>
+       <div class="container">
+           <p>&copy; 2025 Russia RPG. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+              <a href="C:\Users\Киря\OneDrive\Desktop\russia-rpg\glav.html" target="_blank"><i class="fa fa-sitemap" aria-hidden="true"></i></a>
+                <a href="https://t.me/Russia_RPG" target="_blank"><i class="fab fa-telegram"></i></a>
+          </div>
+      </div>
+    </footer>
+
+</body>
+</html>

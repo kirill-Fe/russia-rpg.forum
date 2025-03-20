@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Russia RPG</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <style>
+        body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #171a1d;
+    color: #ddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #21252b;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #ddd;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+.auth-buttons a {
+  text-decoration: none;
+  color: #ddd;
+  background-color: #3498db;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-left: 5px;
+  display: inline-block;
+}
+ .auth-buttons a:hover {
+      background-color: #2980b9;
+  }
+
+main {
+    padding: 30px 0;
+}
+
+.server-description {
+    background-color: #21252b;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.server-description h2 {
+    margin-bottom: 10px;
+}
+
+.server-sections .section {
+     background-color: #21252b;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.section .section-header {
+    display: flex;
+    align-items: center;
+     margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.section-header h3{
+    margin-left: 10px;
+}
+
+.section-icon {
+    font-size: 24px;
+    color: #3498db;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+      border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    font-weight: bold;
+}
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+table a {
+     text-decoration: none;
+     color: #ddd;
+}
+
+
+footer {
+     background-color: #21252b;
+    color: #ddd;
+    text-align: center;
+    padding: 15px 0;
+   border-top: 1px solid #333;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #2b2f34;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #555;
+    width: 400px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #ddd;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+/* Медиа запросы для адаптивности */
+@media (max-width: 1024px) {
+    .container {
+       max-width: 900px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+     max-width: 700px;
+    }
+   header .container {
+        flex-direction: column;
+        align-items: flex-start;
+  }
+  nav ul {
+       margin-top: 10px;
+    }
+    nav ul li{
+        margin-left: 10px;
+        margin-bottom: 10px;
+   }
+    .header-right button{
+        margin-left: 0;
+       margin-bottom: 5px;
+    }
+   .hero {
+      flex-direction: column;
+        text-align: center;
+   }
+   .hero-content {
+        max-width: 100%;
+     margin-bottom: 20px;
+    }
+  .hero-image{
+        max-width: 100%;
+    }
+   .catalog-grid,
+   .prices-grid{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+   .why-grid{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+@media (max-width: 480px) {
+    .container {
+      max-width: 95%;
+    }
+   nav ul li{
+       display: block;
+      margin-left: 0;
+    }
+  .catalog-grid,
+  .prices-grid{
+        grid-template-columns: 1fr;
+    }
+    .why-grid{
+       grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+         <div class="container">
+            <a href="glav.html" class="logo">Russia RPG</a>
+            <nav>
+               <ul>
+                    <li><a href="glav.html">Форум</a></li>
+                    <li><a href="prav.html">Правила</a></li>
+                    <li><a href="https://t.me/Kirill_Florik">Помощь</a></li>
+                    <li><a href="CHS.html">ЧСники</a></li>
+                </ul>
+            </nav>
+           <div class="header-right">
+               <input type="text" placeholder="Поиск..." class="search-input">
+              <div class="auth-buttons">
+                   <a href="#" id="login-btn">Вход</a>
+                   <a href="#" id="register-btn">Регистрация</a>
+              </div>
+           </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="server-description">
+                <h2>Russia RPG</h2>
+                <p>Описание сервера. Здесь может быть информация о правилах, особенностях или новостях.</p>
+            </section>
+
+            <section class="server-sections">
+                <div class="section">
+                   <div class="section-header">
+                      <i class="fas fa-comments section-icon"></i>
+                    <h3>Общие вопросы</h3>
+                   </div>
+                    <table>
+                        <tbody>
+                             <tr>
+                                 <td><a href="zhb.html">Жалоба на игрока</a></td>
+                              </tr>
+                              <tr>
+                                 <td><a href="teh.html">Технический раздел</a></td>
+                             </tr>
+                            </tbody>
+                       </table>
+                </div>
+                   <div class="section">
+                     <div class="section-header">
+                       <i class="fas fa-bullhorn section-icon"></i>
+                     <h3>Новости сервера</h3>
+                     </div>
+                      <table>
+                         <tbody>
+                            <tr>
+                                <td><a href="#">Обновление сервера</a></td>
+                            </tr>
+                           <tr>
+                                <td><a href="#">Новый ивент</a></td>
+                            </tr>
+                       </tbody>
+                     </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+         <div class="container">
+            <p>&copy; 2025 Russia RPG. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Модальное окно для входа -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Вход</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Логин:</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Пароль:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+   <div id="register-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Регистрация</h2>
+         <form id="register-form">
+            <div class="form-group">
+                <label for="register-username">Логин:</label>
+                <input type="text" id="register-username" required>
+            </div>
+              <div class="form-group">
+                 <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+                 <label for="register-password">Пароль:</label>
+                <input type="password" id="register-password" required>
+             </div>
+            <button type="submit" class="submit-btn">Зарегистрироваться</button>
+           </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const loginModal = document.getElementById('login-modal');
+    const registerModal = document.getElementById('register-modal');
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    const closeLoginModal = document.querySelectorAll('.close-modal')[0];
+    const closeRegisterModal = document.querySelectorAll('.close-modal')[1];
+
+
+
+    loginBtn.addEventListener('click', () => {
+      loginModal.style.display = 'block';
+   });
+
+   registerBtn.addEventListener('click', () => {
+       registerModal.style.display = 'block';
+   });
+
+
+    closeLoginModal.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+
+
+    closeRegisterModal.addEventListener('click', () => {
+         registerModal.style.display = 'none';
+    });
+
+
+    window.addEventListener('click', (event) => {
+       if (event.target === loginModal) {
+        loginModal.style.display = 'none';
+       }
+       if (event.target === registerModal) {
+        registerModal.style.display = 'none';
+      }
+    });
+
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+     alert("Форма входа не настроена.")
+      loginModal.style.display = 'none';
+  })
+
+ const registerForm = document.getElementById('register-form');
+ registerForm.addEventListener('submit', (e) => {
+   e.preventDefault();
+   alert("Форма регистрации не настроена.")
+      registerModal.style.display = 'none';
+  })
+
+});
+    </script>
+</body>
+</html>
